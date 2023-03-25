@@ -29,15 +29,8 @@
                     backgroundColor: "hsla(344,100%,95%,0.8)", 
                     borderColor: "hsla(345,100%,85%,1)"
                 },
-            ],},
+            ], }, 
             options: {
-              title: {
-                display: true,
-                text: 'Percentage of girls who felt pressure to be beauty, by level of self-esteem'
-              },
-              legend: {
-                position: 'bottom'
-              },
               scales: {
                 yAxes: [{
                   ticks: {
@@ -47,7 +40,7 @@
               }
             }
           });
-
+                
 // donut chart 
                 const dataObj2 = {
                     labels: [
@@ -70,86 +63,17 @@
                       type: "doughnut",
                       data: dataObj2,
                       options: {
+                        plugins: {
                         title: {
                           display: true,
-                          text: 'Cost of body dissatisfaction, by USD billions'
-                        },
-                        legend: {
-                          position: 'bottom'
-                        },
+                          text: "Percentage of girls worldwide that felt pressure to be beautiful, by level of self-esteem",
+                          fontFamily: "TrebuchetMS",
+                          fontSize: 24,
+                          fontColor: 'rgb(0,120,0)',
+                        }},
+                      responsive: true,
+                      legend: {
+                        display: true,
+                        postition: "right",
+                      },
                       }})
-
-// quiz element 
-
-const questions = [
-  {
-    question: "How many billion dollars do you think have been lost in the US due to body dissatisfaction?",
-    answers: [
-      { text: "87", correct: false },
-      { text: "121", correct: true },
-      { text: "290", correct: false },
-      { text: "305", correct: false },
-    ],
-  },
-];
-
-const questionElement = document.getElementById("question");
-const answerButtonsElement = document.getElementById("answer-buttons-container");
-
-let currentQuestionIndex = 0;
-let hasShownQuizAlert = false;
-
-function showQuestion(question) {
-  questionElement.innerText = question.question;
-}
-
-function showAnswers(question) {
-  question.answers.forEach((answer, index) => {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("answer-button"); // Add answer-button class
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", selectAnswer);
-    answerButtonsElement.appendChild(button);
-  });
-}
-
-function resetQuiz() {
-  currentQuestionIndex = 0;
-  answerButtonsElement.innerHTML = "";
-  showQuestion(questions[currentQuestionIndex]);
-  showAnswers(questions[currentQuestionIndex]);
-}
-
-function selectAnswer(event) {
-  const selectedButton = event.target;
-  const isCorrect = selectedButton.dataset.correct;
-  if (isCorrect) {
-    alert("Correct!");
-  } else {
-    alert("Wrong answer.");
-  }
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    answerButtonsElement.innerHTML = "";
-    showQuestion(questions[currentQuestionIndex]);
-    showAnswers(questions[currentQuestionIndex]);
-  } else {
-    resetQuiz();
-  }
-}
-
-window.addEventListener("scroll", function () {
-  if (!hasShownQuizAlert && (
-    document.body.scrollTop > 0 ||
-    document.documentElement.scrollTop > 0
-  )) {
-    alert("Please try the quiz!");
-    hasShownQuizAlert = true;
-  }
-});
-
-resetQuiz();
-
