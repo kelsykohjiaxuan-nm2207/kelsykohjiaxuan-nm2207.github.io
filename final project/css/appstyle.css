@@ -9,8 +9,24 @@ font-family: "Poppins", sans-serif;
 
 body{
     min-height: 100vh;
-    
 }
+
+/* Guide from W3 schools on spliting webpage into 2 columns: https://www.w3schools.com/howto/howto_css_two_columns.asp */
+
+/*Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+    
+/* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
 header{
     background-color: #fff;
@@ -25,7 +41,6 @@ header{
     align-items: center;
     font-family: "Poppins"
    
-    
 }
 
 header .logo{
@@ -40,9 +55,11 @@ header .logo{
 }
 
 header nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: right;
+  align-items: right;
+  float: right;
+  font-size: 1.5em
 }
 
 header nav a{
@@ -74,17 +91,22 @@ header nav a:hover{
     flex-direction: column;
 }
 
-h1 {
-    font-size: 5em;
+.title {
+    font-size: 4em;
 }
 
-h2 {
+.description {
     font-size: 3em; 
+    align-items: center;
 
 }
 
-p{
-    font-size: 1.5em;
+.content{
+  font-size: 2.5em;
+}
+
+.content2{
+    font-size: 2em;
 }
 
 .canvas-container {
@@ -107,6 +129,14 @@ p{
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+  }
+
+  .question{
+    font-size: 2em;
+  }
+
+  .question2{
+    font-size: 2em;
   }
 
   /*Scroll element, modified from https://codepen.io/postor/pen/vYpNYg */
@@ -178,7 +208,19 @@ p{
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     overflow-x: scroll;
-    overflow-y: auto
+    overflow-y: auto;
+    height: 375px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+     
+  }
+
+  :root {
+    --item-height: 50px;
+    --item-margin: 10px;
   }
   
   .carousel-item {
@@ -191,3 +233,4 @@ p{
     margin-right: 0;
   }
   
+
