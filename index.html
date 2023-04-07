@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NM2207 Final Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css" href ="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script defer type="text/javascript" src="appscripts/main.js">
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body> 
+    <header>
+      <a class ="logo"> (re)Defining Beauty </a>
+      <nav> 
+        <a href ="index.html"> Home </a>
+        <a href ="Storyboard.pdf"> Storyboard </a>
+        <a href ="journal.html"> Diary Entries </a>
+      </nav>
+    </header>
+
+<section class="page"> 
+  <div class="info">
+  <h1 class="title"> Let's reimagine beauty. </h2>
+  <p class="content"> How do young women perceive themselves? What are the social, financial, and medical costs of poor self-perception? </p>
+  <!-- scroll element modified from https://codepen.io/postor/pen/vYpNYg -->
+  <svg class="arrows">
+    <path class="a1" d="M0 0 L30 32 L60 0"></path>
+    <path class="a2" d="M0 20 L30 52 L60 20"></path>
+    <path class="a3" d="M0 40 L30 72 L60 40"></path>
+  </svg> 
+</div>
+</section>
+
+<section class="page">
+  <div class="row">
+    <div class="column">
+  <br><br><h2 class="description"> Now more than ever, girls and young women feel pressured to be beautiful. </h2> </div>
+    <div class = "column"><br><br><br> <div id="canvas-container">
+      <canvas id="beauty-pressure" width="600" height="400"></canvas> 
+      <div style="position: absolute; bottom: 0; font-style: italic; font-size: 12px;">
+        Source: The 2017 Dove Global Girls Beauty and Confidence Report (Diedrichs and Weiner, 2017)
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class ="row">
+  <div class="column">
+  <h2 class="description"> These pressures have been costly for women and society at large, financially, socially, and medically. </h2></div>
+  <div class="column"><section id="quiz-section">
+    <!-- quiz elements go here -->
+    <br> <div id="quiz-container">
+      <div id="question-container">
+        <p id="question1" font-size: 2em></p>
+      </div>
+     <br> <div id="answer-buttons-container">
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+      </div>
+    </div> 
+  </div>
+</div>
+      </section>
+</section>
+
+<section class="page">
+  <div class="row"> 
+    <div class="column">
+      <br><br><br><h2 class="description"> The financial and non-financial costs of dissatisfaction with women's bodies has been substantial. </h2>
+    </div>
+    <div class="column">
+      <canvas id="BDcost" width="600" height="400"></canvas>
+      <div style="position: absolute; bottom: 0; right:300px; font-style: italic; font-size: 12px;">
+      Source: The Real Cost of Beauty Ideals (Dove, 2022) 
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br><section class="page"> 
+ <br><br> <h2 class="description"> Medically, the impact on women has been two-fold. 
+  <br> <h2 class= "content"> Women are driven by body dissatisfaction to elective cosmetic procedures. These non-surgical and surgical procedures can cause unnecessary harm. </h2>
+<div id="canvas-container">
+  <canvas id="plasticSurgery" width="600" height="400"></canvas>
+  <div style="position: absolute; bottom: 0; font-style: italic; font-size: 12px;">
+    Source: International Society of Aesthetic Plastic Surgery (ISAPS) International Survey On Aesthetic/Cosmetic Procedures <br> (ISAPS, 2010; ISAPS, 2013; ISAPS, 2015; ISAPS, 2017; ISAPS, 2019; ISAPS, 2021)
+  </div>
+</div>
+</section> 
+
+<section class="page">
+  <h2 class="description"> Next, women can suffer irreparable harm from low self-esteem, causing mental disorders like eating disorders or depression.  </h2>
+<br><br> <div id="canvas-container">
+    <canvas id="prodLoss" width="600" height="400"></canvas> 
+    <div style="position: absolute; bottom: 0; font-style: italic; font-size: 12px;">
+    Source: The Real Cost of Beauty Ideals (Dove, 2022)
+    </div>
+</div> 
+</section> 
+
+<section class="page">
+  <h2 class="description"> The increased pressures faced by women could be due to increased social media and other media consumption like television shows. </h2>
+
+  <br> <div id="quiz-container2">
+    <div id="question-container2">
+      <p id="question2"></p>
+    </div>
+    <div id="answer-buttons-container2">
+      <button class="answer-button2"> </button>
+      <button class="answer-button2"> </button>
+    </div>
+    <div style="position: absolute; bottom: 0; font-style: italic; font-size: 12px;">
+      Source: <!--The Real Cost of Beauty Ideals (Dove, 2022)-->
+      </div>
+  </div> 
+</section>
+
+
+<section class="page">
+  <h2 class="content"> To this day, it seems the body positivity movement has not reached reality TV, which continues to be filled with scenes of women bodyshaming other women, rather than celebrating their differences. </h2>
+  <!--web carousel for youtube clips-->
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <iframe allowfullscreen="" width="600" height="400" src="https://youtube.com/embed/uVWqEwoyUh0?start=47"></iframe>
+      </div>
+      <div class="carousel-item">
+        <iframe allowfullscreen="" width="600" height="400" src="https://youtube.com/embed/FG7U-B7gszk?start=208"></iframe>
+      </div>
+      <div class="carousel-item">
+        <iframe allowfullscreen="" width="600" height="400" src="https://www.youtube.com/embed/zvSWDsaBcB0"></iframe>
+      </div>
+      <div class="carousel-item">
+        <iframe allowfullscreen="" width="600" height="400" src="https://www.youtube.com/embed/CevxZvSJLk8"></iframe>
+      </div>
+    </div>   
+  </div>
+  
+</section>
+
+<section class="page">
+  <h2 class="title"> What can we do? </h2>
+  <p class="content"> <br> Research has shown that increased media literacy can help women recognise augmentation of images online, which can prevent harmful and unhealthy comparisons between themselves and public figures like models or influencers.  </p> 
+  <br> <p> (insert graph) </p>
+</section>
+
+<!-- text animation to be added in each of the sections above. -->
+
+</body>
+
+
+
+
+
+
+
+
+
