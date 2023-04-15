@@ -286,50 +286,48 @@ header nav a:hover{
   font-size: 5em;
 }
 
-/* text animation adapted from: https://codepen.io/tindang17/pen/gjEZxW */
-
-span {
-  display: block;
-  text-align: center;
-}
+/* text animation adapted from chatgpt */
 
 .text1 {
-  font-size: 3rem;
-  margin-bottom: 0px;
-  animation: textBounceStretch 3s 1;
-  background-color: white;
-  position: relative;
+  font-size: 32px; /* set initial font size */
+  transition: font-size 1s ease; /* add transition to font-size property */
 }
 
-@keyframes textBounceStretch {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.5); }
-  100% { transform: scale(1); }
+.text1.stretch {
+  font-size: 48px; /* increase font size to stretch text */
 }
 
+/* Define keyframes for the animation */
+@keyframes stretch-text {
+  from { font-size: 32px; }
+  to { font-size: 48px; }
+}
+
+/* Add animation to text1 element */
 .text1.animate {
-  animation: textBounceStretch 3s 1;
+  animation-name: stretch-text;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
-.text2 {
-  font-size: 2.5rem;
-}
-@keyframes textBounceStretch {
-  0% {
-    color: white;
-    margin-bottom: -40px;
+/* Add event listener to trigger animation when element is in viewport */
+window.addEventListener('scroll', () => {
+  const text1 = document.querySelector('.text1');
+  const rect = text1.getBoundingClientRect();
+  const inView = (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  if (inView) {
+    text1.classList.add('stretch', 'animate');
+  } else {
+    text1.classList.remove('stretch', 'animate');
   }
-  30% {
-    letter-spacing: 25px;
-    margin-bottom: -40px;
-  }
-  85% {
-    letter-spacing: 8px;
-    margin-bottom: -40px;
-  }
-}
+});
 
-
-
+/* highlight text */
 
 
